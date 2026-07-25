@@ -115,3 +115,16 @@ export function subtractDMS(
 
   return totalSecondsToDMS(Math.abs(total));
 }
+/**
+ * Percentage Error
+ * Formula:
+ * |Observed - Accepted| / Accepted × 100
+ */
+export function calculatePercentageError(
+  observed: number,
+  accepted: number
+): number {
+  return (
+    (Math.abs(observed - accepted) / accepted) * 100
+  );
+}

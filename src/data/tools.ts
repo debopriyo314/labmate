@@ -39,9 +39,9 @@ export const tools = [
     path: "/tools/scientific",
   },
   {
-    title: "Error Calculator",
-    description: "Percentage error and uncertainty calculations.",
+    title: "Percentage Error",
+    description: "Calculate percentage error for experiments.",
     icon: ChartColumn,
-    path: "/tools/error",
+    path: "/tools/percentage-error",
   },
 ];

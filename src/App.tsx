@@ -8,26 +8,35 @@ import Manuals from "./pages/Manuals";
 import FormulaBook from "./pages/FormulaBook";
 import Records from "./pages/Records";
 import VernierCalculator from "./pages/VernierCalculator";
+import ScrewGaugeCalculator from "./pages/ScrewGaugeCalculator";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
-          {/* Home */}
           <Route path="/" element={<Home />} />
 
-          {/* Main Pages */}
           <Route path="/tools" element={<Tools />} />
-          <Route path="/manuals" element={<Manuals />} />
-          <Route path="/formula-book" element={<FormulaBook />} />
-          <Route path="/records" element={<Records />} />
 
-          {/* Tool Pages */}
           <Route
             path="/tools/vernier"
             element={<VernierCalculator />}
           />
+
+          <Route
+            path="/tools/screw-gauge"
+            element={<ScrewGaugeCalculator />}
+          />
+
+          <Route path="/manuals" element={<Manuals />} />
+
+          <Route
+            path="/formula-book"
+            element={<FormulaBook />}
+          />
+
+          <Route path="/records" element={<Records />} />
         </Route>
       </Routes>
     </BrowserRouter>

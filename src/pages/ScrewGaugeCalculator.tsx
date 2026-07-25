@@ -4,23 +4,23 @@ import CalculatorCard from "../components/tools/CalculatorCard";
 import InputField from "../components/tools/InputField";
 import ResultCard from "../components/tools/ResultCard";
 
-import { calculateVernierReading } from "../utils/calculations";
+import { calculateScrewGaugeReading } from "../utils/calculations";
 
-function VernierCalculator() {
-  const [msr, setMsr] = useState("");
-  const [vsr, setVsr] = useState("");
+function ScrewGaugeCalculator() {
+  const [psr, setPsr] = useState("");
+  const [csr, setCsr] = useState("");
   const [leastCount, setLeastCount] = useState("0.01");
   const [result, setResult] = useState<number | null>(null);
 
   const calculateReading = () => {
-    if (msr === "" || vsr === "") {
+    if (psr === "" || csr === "") {
       alert("Please fill in all fields.");
       return;
     }
 
-    const reading = calculateVernierReading(
-      Number(msr),
-      Number(vsr),
+    const reading = calculateScrewGaugeReading(
+      Number(psr),
+      Number(csr),
       Number(leastCount)
     );
 
@@ -28,39 +28,39 @@ function VernierCalculator() {
   };
 
   const resetCalculator = () => {
-    setMsr("");
-    setVsr("");
+    setPsr("");
+    setCsr("");
     setLeastCount("0.01");
     setResult(null);
   };
 
   return (
     <section className="mx-auto max-w-4xl px-6 pt-28 pb-16">
-      {/* Heading */}
+
       <div className="text-center">
         <h1 className="text-4xl font-bold text-slate-900">
-          📏 Vernier Calculator
+          🔩 Screw Gauge Calculator
         </h1>
 
         <p className="mt-3 text-lg text-slate-600">
-          Calculate Vernier Caliper readings quickly and accurately.
+          Calculate Screw Gauge readings quickly and accurately.
         </p>
       </div>
 
-      {/* Calculator */}
       <CalculatorCard>
+
         <InputField
-          label="Main Scale Reading (mm)"
-          value={msr}
-          onChange={setMsr}
-          placeholder="Enter Main Scale Reading"
+          label="Pitch Scale Reading (mm)"
+          value={psr}
+          onChange={setPsr}
+          placeholder="Enter Pitch Scale Reading"
         />
 
         <InputField
-          label="Vernier Scale Reading"
-          value={vsr}
-          onChange={setVsr}
-          placeholder="Enter Vernier Scale Reading"
+          label="Circular Scale Reading"
+          value={csr}
+          onChange={setCsr}
+          placeholder="Enter Circular Scale Reading"
         />
 
         <div className="mb-8">
@@ -71,42 +71,41 @@ function VernierCalculator() {
           <select
             value={leastCount}
             onChange={(e) => setLeastCount(e.target.value)}
-            className="w-full rounded-xl border border-slate-300 p-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+            className="w-full rounded-xl border border-slate-300 p-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
           >
             <option value="0.01">0.01 mm</option>
-            <option value="0.02">0.02 mm</option>
-            <option value="0.05">0.05 mm</option>
-            <option value="0.10">0.10 mm</option>
+            <option value="0.005">0.005 mm</option>
           </select>
         </div>
 
         <div className="flex gap-4">
           <button
             onClick={calculateReading}
-            className="flex-1 rounded-xl bg-blue-600 py-3 font-semibold text-white transition hover:bg-blue-700"
+            className="flex-1 rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700"
           >
             Calculate
           </button>
 
           <button
             onClick={resetCalculator}
-            className="rounded-xl border border-slate-300 px-6 font-semibold transition hover:bg-slate-100"
+            className="rounded-xl border border-slate-300 px-6 font-semibold hover:bg-slate-100"
           >
             Reset
           </button>
         </div>
+
       </CalculatorCard>
 
-      {/* Result */}
       {result !== null && (
         <ResultCard
           result={result}
-          formula="Reading = MSR + (VSR × Least Count)"
-          calculation={`${msr} + (${vsr} × ${leastCount})`}
+          formula="Reading = PSR + (CSR × Least Count)"
+          calculation={`${psr} + (${csr} × ${leastCount})`}
         />
       )}
+
     </section>
   );
 }
 
-export default VernierCalculator;
+export default ScrewGaugeCalculator;

@@ -1,3 +1,4 @@
+import { calculateVernierReading } from "../utils/calculations";
 import { useState } from "react";
 
 function VernierCalculator() {
@@ -12,8 +13,11 @@ function VernierCalculator() {
       return;
     }
 
-    const reading =
-      Number(msr) + Number(vsr) * Number(leastCount);
+   const reading = calculateVernierReading(
+  Number(msr),
+  Number(vsr),
+  Number(leastCount)
+);
 
     setResult(reading);
   };

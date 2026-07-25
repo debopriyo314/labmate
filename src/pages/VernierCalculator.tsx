@@ -1,7 +1,10 @@
 import { useState } from "react";
 
 import CalculatorCard from "../components/tools/CalculatorCard";
+import CalculatorHeader from "../components/tools/CalculatorHeader";
 import InputField from "../components/tools/InputField";
+import SelectField from "../components/tools/SelectField";
+import ActionButtons from "../components/tools/ActionButtons";
 import ResultCard from "../components/tools/ResultCard";
 
 import { calculateVernierReading } from "../utils/calculations";
@@ -36,18 +39,11 @@ function VernierCalculator() {
 
   return (
     <section className="mx-auto max-w-4xl px-6 pt-28 pb-16">
-      {/* Heading */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-slate-900">
-          📏 Vernier Calculator
-        </h1>
+      <CalculatorHeader
+        title="📏 Vernier Calculator"
+        description="Calculate Vernier Caliper readings quickly and accurately."
+      />
 
-        <p className="mt-3 text-lg text-slate-600">
-          Calculate Vernier Caliper readings quickly and accurately.
-        </p>
-      </div>
-
-      {/* Calculator */}
       <CalculatorCard>
         <InputField
           label="Main Scale Reading (mm)"
@@ -63,47 +59,40 @@ function VernierCalculator() {
           placeholder="Enter Vernier Scale Reading"
         />
 
-        <div className="mb-8">
-          <label className="mb-2 block font-semibold text-slate-700">
-            Least Count
-          </label>
+        <SelectField
+          label="Least Count"
+          value={leastCount}
+          onChange={setLeastCount}
+          options={[
+            { label: "0.01 mm", value: "0.01" },
+            { label: "0.02 mm", value: "0.02" },
+            { label: "0.05 mm", value: "0.05" },
+            { label: "0.10 mm", value: "0.10" },
+          ]}
+        />
 
-          <select
-            value={leastCount}
-            onChange={(e) => setLeastCount(e.target.value)}
-            className="w-full rounded-xl border border-slate-300 p-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
-          >
-            <option value="0.01">0.01 mm</option>
-            <option value="0.02">0.02 mm</option>
-            <option value="0.05">0.05 mm</option>
-            <option value="0.10">0.10 mm</option>
-          </select>
-        </div>
-
-        <div className="flex gap-4">
-          <button
-            onClick={calculateReading}
-            className="flex-1 rounded-xl bg-blue-600 py-3 font-semibold text-white transition hover:bg-blue-700"
-          >
-            Calculate
-          </button>
-
-          <button
-            onClick={resetCalculator}
-            className="rounded-xl border border-slate-300 px-6 font-semibold transition hover:bg-slate-100"
-          >
-            Reset
-          </button>
-        </div>
+        <ActionButtons
+          onCalculate={calculateReading}
+          onReset={resetCalculator}
+        />
       </CalculatorCard>
 
-      {/* Result */}
       {result !== null && (
-        <ResultCard
-          result={result}
-          formula="Reading = MSR + (VSR × Least Count)"
-          calculation={`${msr} + (${vsr} × ${leastCount})`}
-        />
+       <ResultCard
+  formula="Reading = MSR + (VSR × Least Count)"
+  calculation={`${msr} + (${vsr} × ${leastCount})`}
+  resultContent={
+    <p>
+      <span className="font-semibold">
+        Final Reading:
+      </span>
+
+      <span className="ml-3 text-3xl font-bold text-blue-600">
+        {result.toFixed(2)} mm
+      </span>
+    </p>
+  }
+/>
       )}
     </section>
   );

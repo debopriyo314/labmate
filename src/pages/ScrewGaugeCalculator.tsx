@@ -98,10 +98,20 @@ function ScrewGaugeCalculator() {
 
       {result !== null && (
         <ResultCard
-          result={result}
-          formula="Reading = PSR + (CSR × Least Count)"
-          calculation={`${psr} + (${csr} × ${leastCount})`}
-        />
+  formula="Reading = PSR + (CSR × Least Count)"
+  calculation={`${psr} + (${csr} × ${leastCount})`}
+  resultContent={
+    <p>
+      <span className="font-semibold">
+        Final Reading:
+      </span>
+
+      <span className="ml-3 text-3xl font-bold text-blue-600">
+        {result.toFixed(2)} mm
+      </span>
+    </p>
+  }
+/>
       )}
 
     </section>

@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="sticky top-0 z-50 bg-white border-b border-slate-200">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-blue-600">
@@ -10,12 +10,12 @@ function Navbar() {
         </Link>
 
         {/* Navigation */}
-        <div className="flex gap-6 text-gray-700 font-medium">
-          <Link to="/">Home</Link>
-          <Link to="/tools">Tools</Link>
-          <Link to="/manuals">Manuals</Link>
-          <Link to="/formula-book">Formula Book</Link>
-          <Link to="/records">Records</Link>
+        <div className="flex items-center gap-8">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/tools">Tools</NavLink>
+          <NavLink to="/manuals">Manuals</NavLink>
+          <NavLink to="/formula-book">Formula Book</NavLink>
+          <NavLink to="/records">Records</NavLink>
         </div>
       </div>
     </nav>

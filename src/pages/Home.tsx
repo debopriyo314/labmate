@@ -1,13 +1,7 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import Hero from "../components/home/Hero";
 
 function Home() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-    </>
-  );
+  return <Hero />;
 }
 
 export default Home;

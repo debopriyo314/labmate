@@ -1,1 +1,36 @@
 @import "tailwindcss";
+
+/* Reset */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------ */
+/* LabMate Graph Paper Background */
+/* ------------------------------------------------ */
+
+.graph-paper {
+  min-height: 100vh;
+
+  background-color: #f8fafc;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(148, 163, 184, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(148, 163, 184, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 30px 30px;
+}

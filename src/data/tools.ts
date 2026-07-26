@@ -34,7 +34,7 @@ export const tools = [
   },
   {
     title: "Scientific Calculator",
-    description: "Perform scientific calculations.",
+    description: "Perform scientific and engineering calculations.",
     icon: Sigma,
     path: "/tools/scientific",
   },

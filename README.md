@@ -1,75 +1,230 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🔬 LabMate
 
-Currently, two official plugins are available:
+### Your Complete Physics Companion
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A modern web application designed to help Physics students with laboratory calculations, formula reference, and essential academic tools.
 
-## React Compiler
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-Hosting-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🌐 **Live Demo:** https://physics-labmate.web.app
 
-## Expanding the ESLint configuration
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📖 About
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+LabMate is an all-in-one physics companion built to simplify practical laboratory work and learning.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Whether you're solving measurements with a Vernier Caliper, converting units, calculating experimental error, or searching for a physics formula, LabMate brings everything together in one clean and intuitive interface.
+
+---
+
+# ✨ Features
+
+## 🧮 Physics Calculators
+
+- Vernier Caliper Calculator
+- Screw Gauge Calculator
+- Degree–Minute–Second (DMS) Calculator
+- Scientific Calculator
+- Unit Converter
+- Percentage Error Calculator
+
+---
+
+## 📖 Formula Book
+
+- 180+ Physics formulas
+- Instant search
+- Organized by topics
+- Beautiful mathematical formatting
+
+---
+
+## 🔍 Smart Search
+
+Quickly search for:
+
+- Calculators
+- Tools
+- Formula Book
+
+and navigate instantly.
+
+---
+
+## 📊 Records
+
+A clean records interface prepared for future calculation history support.
+
+---
+
+# 📸 Screenshots
+
+## 🏠 Home
+
+> Add screenshot here
 
 ```
+screenshots/home.png
+```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧮 Tools
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+> Add screenshot here
 
 ```
+screenshots/tools.png
+```
+
+---
+
+## 📖 Formula Book
+
+> Add screenshot here
+
+```
+screenshots/formulabook.png
+```
+
+---
+
+## 📊 Records
+
+> Add screenshot here
+
+```
+screenshots/records.png
+```
+
+---
+
+# 🛠 Tech Stack
+
+- React
+- TypeScript
+- Tailwind CSS
+- React Router
+- KaTeX
+- Firebase Hosting
+- Vite
+
+---
+
+# 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/LabMate.git
+```
+
+Navigate to the project
+
+```bash
+cd LabMate
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run locally
+
+```bash
+npm run dev
+```
+
+Build the project
+
+```bash
+npm run build
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+src/
+│
+├── assets/
+├── components/
+│
+├── data/
+│   ├── formulas/
+│   └── searchData.ts
+│
+├── layouts/
+├── pages/
+├── App.tsx
+└── main.tsx
+```
+
+---
+
+# 🎯 Roadmap
+
+Upcoming features planned for future releases:
+
+- 🌙 Dark Mode
+- 📊 Calculation History
+- 📄 Practical Manuals
+- ⭐ Favourite Formulas
+- 🔍 Universal Search
+- 📱 Progressive Web App (PWA)
+
+---
+
+# 🤝 Contributing
+
+Contributions, ideas and suggestions are welcome.
+
+If you find a bug or have an idea for improving LabMate, feel free to open an Issue or submit a Pull Request.
+
+---
+
+# 👨‍💻 Developer
+
+## Debopriya Mandal
+
+B.Sc. Physics Student
+
+Interested in
+
+- Physics
+- Software Development
+- Educational Technology
+- Web Applications
+
+GitHub:
+
+```
+https://github.com/YOUR_GITHUB_USERNAME
+```
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+<div align="center">
+
+### ⭐ If you found LabMate useful, consider giving this repository a star!
+
+Made with ❤️ for Physics Students.
+
+</div>

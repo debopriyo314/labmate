@@ -12,6 +12,7 @@ import VernierCalculator from "./pages/VernierCalculator";
 import ScrewGaugeCalculator from "./pages/ScrewGaugeCalculator";
 import DMSCalculator from "./pages/DMSCalculator";
 import PercentageErrorCalculator from "./pages/PercentageErrorCalculator";
+import ScientificCalculator from "./pages/ScientificCalculator";
 
 function App() {
   return (
@@ -48,7 +49,10 @@ function App() {
             path="/formula-book"
             element={<FormulaBook />}
           />
-
+<Route
+  path="/tools/scientific"
+  element={<ScientificCalculator />}
+/>
           <Route path="/records" element={<Records />} />
         </Route>
       </Routes>

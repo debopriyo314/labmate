@@ -13,6 +13,7 @@ import ScrewGaugeCalculator from "./pages/ScrewGaugeCalculator";
 import DMSCalculator from "./pages/DMSCalculator";
 import PercentageErrorCalculator from "./pages/PercentageErrorCalculator";
 import ScientificCalculator from "./pages/ScientificCalculator";
+import UnitConverter from "./pages/UnitConverter";
 
 function App() {
   return (
@@ -52,6 +53,10 @@ function App() {
 <Route
   path="/tools/scientific"
   element={<ScientificCalculator />}
+/>
+<Route
+  path="/tools/unit-converter"
+  element={<UnitConverter />}
 />
           <Route path="/records" element={<Records />} />
         </Route>
